@@ -19,9 +19,6 @@ class CourseViewSet(viewsets.ModelViewSet):
         serializer = StudentSerializer(students, many=True)
         return Response(serializer.data)
 
-
-
-
 class StudentViewSet(viewsets.ModelViewSet):
     queryset = Student.objects.all().order_by('-id')
     serializer_class = StudentSerializer
